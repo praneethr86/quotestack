@@ -10,6 +10,9 @@ class ThemeText {
   static final subHead = GoogleFonts.dosis(
       textStyle: _subHead.copyWith(fontSize: ScreenUtil().setSp(20)));
 
+  static final tagName = GoogleFonts.caveat(
+      textStyle: _tagName.copyWith(fontSize: ScreenUtil().setSp(15)));
+
   static const _headline = TextStyle(
     color: Colors.white,
     fontWeight: FontWeight.w700,
@@ -19,5 +22,10 @@ class ThemeText {
   static const _subHead = TextStyle(
     color: Colors.white,
     fontWeight: FontWeight.w400,
+  );
+
+  static const _tagName = TextStyle(
+    color: Colors.white,
+    fontWeight: FontWeight.w200,
   );
 }

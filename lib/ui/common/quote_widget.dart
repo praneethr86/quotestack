@@ -4,12 +4,14 @@ import 'package:quotesapp/ui/styleguide/theme_text.dart';
 
 class QuoteWidget extends StatelessWidget {
   final Color backgroundColor;
-  final String quote, author;
+  final String quote, author, tag;
 
   const QuoteWidget({Key key,
     @required this.backgroundColor,
     @required this.quote,
-    @required this.author})
+    @required this.author,
+    @required this.tag,
+  })
       : super(key: key);
 
   @override
@@ -43,6 +45,12 @@ class QuoteWidget extends StatelessWidget {
                 style: ThemeText.subHead,
               ),
             ),
+            Center(
+              child: Text(
+                tag,
+                style: ThemeText.tagName,
+              )
+            )
           ],
         ));
   }

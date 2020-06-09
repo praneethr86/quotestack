@@ -18,8 +18,9 @@ class QuoteScreen extends StatelessWidget {
       body: StreamBuilder(
         stream: _firestore.collection('quotes').snapshots(),
         builder: (context, snapshot) {
-//          if(!snapshot.hasData) return _LoadingIndicator();
+          if(!snapshot.hasData) return _LoadingIndicator();
           return PageView.builder(
+              physics: ClampingScrollPhysics(),
               itemCount: snapshot.data.documents.length,
               itemBuilder: (context, index) {
                 final document = snapshot.data.documents[index];
@@ -29,6 +30,7 @@ class QuoteScreen extends StatelessWidget {
                   ),
                   quote: document['quote'],
                   author: document['author'],
+                  tag: document['tag'],
                 );
               }
           );
